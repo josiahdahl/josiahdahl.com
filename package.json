@@ -9,6 +9,7 @@
     "@fortawesome/react-fontawesome": "^0.1.2",
     "babel-plugin-styled-components": "^1.6.0",
     "gatsby": "next",
+    "gatsby-cli": "^1.1.58",
     "gatsby-link": "^1.6.46",
     "gatsby-plugin-netlify": "next",
     "gatsby-plugin-netlify-cms": "next",
