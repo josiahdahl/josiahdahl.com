@@ -1,6 +1,7 @@
-import PropTypes from 'prop-types';
-import React from 'react';
-import styled from 'styled-components';
+import PropTypes from "prop-types";
+import React from "react";
+import styled from "styled-components";
+import { Link } from "gatsby";
 
 const CardContainer = styled.article`
   border: 1px solid ${props => props.theme.light};
@@ -44,7 +45,7 @@ const CardTag = styled.a`
   }
 `;
 
-const CardAction = styled.a`
+const CardAction = styled(Link)`
   color: ${props => props.theme.accent};
   font-size: 1.2rem;
   justify-self: flex-end;
@@ -65,7 +66,7 @@ const Card = ({ title, summary, tags, to, actionText }) => {
             <React.Fragment>
               <CardTagLabel>Tags</CardTagLabel>
               {tags.map(tag => (
-                <CardTag href={`/tags/${tag}`}>{tag}</CardTag>
+                <CardTag href={`/tags/${tag.toLowerCase()}`} key={tag}>{tag}</CardTag>
               ))}
             </React.Fragment>
           ) : (
@@ -73,7 +74,7 @@ const Card = ({ title, summary, tags, to, actionText }) => {
           )}
         </div>
 
-        <CardAction href={to}>{actionText}</CardAction>
+        <CardAction to={to} exact>{actionText}</CardAction>
       </CardFooter>
     </CardContainer>
   );
@@ -84,13 +85,13 @@ Card.propTypes = {
   summary: PropTypes.string.isRequired,
   tags: PropTypes.arrayOf(PropTypes.string),
   to: PropTypes.string,
-  actionText: PropTypes.string,
+  actionText: PropTypes.string
 };
 
 Card.defaultProps = {
   tags: [],
   to: undefined,
-  actionText: 'View',
+  actionText: "View"
 };
 
 export default Card;

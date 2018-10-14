@@ -9,7 +9,7 @@ import {
 import profilePicture from '../img/navbar-profile.png';
 import { pxToRem } from '../styles/util';
 import SocialLinks from './SocialLinks';
-import Link from 'gatsby-link';
+import { Link } from 'gatsby';
 
 const SideBarContainer = styled.div`
   background-color: ${props => props.theme.primary};
@@ -60,9 +60,9 @@ const SiteNavList = styled.ul`
   }
 `;
 
-const SiteNavLink = ({ to, text }) => (
+const SiteNavLink = ({ to, text, exists }) => (
   <li>
-    <a href={to}>{text}</a>
+    {exists ? <Link to={to}>{text}</Link> : <a href={to}>{text}</a>}
   </li>
 );
 
@@ -89,18 +89,22 @@ const siteLinks = [
   {
     to: '/portfolio',
     text: 'Portfolio',
+    exists: false,
   },
   {
     to: '/blog',
     text: 'Blog',
+    exists: false,
   },
   {
     to: '/about',
     text: 'About',
+    exists: false,
   },
   {
     to: '/contact',
     text: 'Contact',
+    exists: false,
   },
 ];
 
