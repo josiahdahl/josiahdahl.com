@@ -74,7 +74,7 @@ const Card = ({ title, summary, tags, to, actionText }) => {
           )}
         </div>
 
-        <CardAction to={to}>{actionText}</CardAction>
+        <CardAction to={to} exact>{actionText}</CardAction>
       </CardFooter>
     </CardContainer>
   );

@@ -27,15 +27,15 @@ exports.createPages = ({ actions, graphql }) => {
       return Promise.reject(result.errors);
     }
 
-    const posts = result.data.allMarkdownRemark.edges;
+    const pages = result.data.allMarkdownRemark.edges;
 
-    console.log(JSON.stringify(posts, null, 4));
+    console.log(JSON.stringify(pages, null, 4));
 
-    posts.forEach(edge => {
+    pages.forEach(edge => {
       const id = edge.node.id;
       createPage({
         path: edge.node.fields.slug,
-        tags: edge.node.frontmatter.tags,
+        // tags: edge.node.frontmatter.tags,
         component: path.resolve(
           `src/templates/${String(edge.node.frontmatter.templateKey)}.js`
         ),

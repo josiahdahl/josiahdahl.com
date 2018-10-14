@@ -1,5 +1,6 @@
 ---
 templateKey: portfolio-item-page
+slug: /portfolio/fake-stock/
 title: Fake Stock
 summary: >-
   Track stocks on the Investopedia platform easier with live updates from the
