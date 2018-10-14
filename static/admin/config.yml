@@ -13,10 +13,15 @@ collections:
     slug: "{{slug}}"
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "portfolio-item-page"}
+      - {label: "Featured", name: "featured", widget: "boolean", default: "false"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Summary", name: "summary", widget: "text"}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Tags", name: "tags", widget: "list"}
+      - {label: "Repository", name: "repository", widget: "string"}
+      - {label: "Demo Link", name: "demo", widget: "string"}
+      - {label: "Screenshots", name: "screenshots", widget: list, fields: [{label: "Image", name: "image", widget: "image"}, {label: "Description", name: "description", widget: "string"}]}
+
 #  - name: "blog"
 #    label: "Blog"
 #    folder: "src/pages/blog"
@@ -33,15 +38,22 @@ collections:
 #      - {label: "Demo Link", name: "demo", widget: "string"}
 #      - {label: "Screenshots", name: "screenshots", widget: list, fields: [{label: "Image", name: "image", widget: "image"}, {label: "Description", name: "description", widget: "string"}]}
 
-#  - name: "pages"
-#    label: "Pages"
-#    files:
-#      - file: "src/pages/index.md"
-#        label: "Home"
-#        name: ""
-#        fields:
-#          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "home-page"}
-#          - {label: "Body", name: "body", widget: "markdown"}
+  - name: "pages"
+    label: "Pages"
+    files:
+      - file: "src/pages/index.md"
+        label: "Home"
+        name: ""
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "home-page"}
+          - {label: "Body", name: "body", widget: "markdown"}
+      - file: "src/pages/portfolio/index.md"
+        label: "Portfolio"
+        name: "portfolio"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "portfolio-page"}
+          - {label: "Title", name: "title", widget: "string", default: "Portfolio"}
+          - {label: "Body", name: "body", widget: "markdown"}
 #      - file: "src/pages/about/index.md"
 #        label: "About"
 #        name: "about"

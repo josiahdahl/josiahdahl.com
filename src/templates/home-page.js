@@ -15,7 +15,7 @@ export const HomePageTemplate = ({ content, contentComponent }) => {
       <Section>
         <h2>FEATURED PROJECT</h2>
         <Card
-          to="#"
+          to="/portfolio/fake-stock/"
           actionText="View Project"
           summary="Track stocks on the Investopedia platform easier with live updates
 from the IEX API."
