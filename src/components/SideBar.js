@@ -61,9 +61,7 @@ const SiteNavList = styled.ul`
 `;
 
 const SiteNavLink = ({ to, text, exists }) => (
-  <li>
-    {exists ? <Link to={to}>{text}</Link> : <a href={to}>{text}</a>}
-  </li>
+  <li>{exists ? <Link to={to}>{text}</Link> : <a href={to}>{text}</a>}</li>
 );
 
 const socialLinks = [
@@ -87,9 +85,14 @@ const socialLinks = [
 
 const siteLinks = [
   {
+    to: '/',
+    text: 'Home',
+    exists: true,
+  },
+  {
     to: '/portfolio',
     text: 'Portfolio',
-    exists: false,
+    exists: true,
   },
   {
     to: '/blog',
