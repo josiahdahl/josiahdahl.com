@@ -47,7 +47,7 @@ collections:
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "home-page"}
           - {label: "Body", name: "body", widget: "markdown"}
-      - file: "src/pages/portfolio/index.md"
+      - file: "src/pages/portfolio.md"
         label: "Portfolio"
         name: "portfolio"
         fields:

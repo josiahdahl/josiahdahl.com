@@ -1,9 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { graphql } from 'gatsby';
+import { graphql, Link } from "gatsby";
 import styled from 'styled-components';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faAngleLeft} from '@fortawesome/free-solid-svg-icons'
 import Layout from '../components/Layout';
 import Section from '../components/ui/Section';
 import PageContent, { HTMLPageContent } from '../components/PageContent';
@@ -12,7 +10,7 @@ const PortfolioTitle = styled.h1`
   margin-top: 0.5rem;
 `;
 
-const PortfolioLink = styled.a`
+const PortfolioLink = styled(Link)`
   color: ${props => props.theme.light};
   text-decoration: none;
 
@@ -56,7 +54,6 @@ const PortfolioItemPageTemplate = ({
   return (
     <main>
       <Section>
-        <PortfolioLink href="/portfolio/"><FontAwesomeIcon icon={faAngleLeft}/>Back</PortfolioLink>
         <PortfolioTitle>{title}</PortfolioTitle>
         <Content content={content} />
       </Section>

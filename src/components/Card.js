@@ -74,13 +74,13 @@ const Card = ({ title, summary, tags, to, actionText }) => {
           )}
         </div>
 
-        <CardAction to={to} exact>{actionText}</CardAction>
+        <CardAction to={to}>{actionText}</CardAction>
       </CardFooter>
     </CardContainer>
   );
 };
 
-Card.propTypes = {
+export const CardPropTypes = {
   title: PropTypes.string.isRequired,
   summary: PropTypes.string.isRequired,
   tags: PropTypes.arrayOf(PropTypes.string),
@@ -88,10 +88,13 @@ Card.propTypes = {
   actionText: PropTypes.string
 };
 
+Card.propTypes = CardPropTypes;
+
 Card.defaultProps = {
   tags: [],
   to: undefined,
   actionText: "View"
 };
+
 
 export default Card;
