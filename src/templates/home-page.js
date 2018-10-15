@@ -1,11 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { graphql } from 'gatsby';
-import Layout from '../components/Layout';
-import Card from '../components/Card';
-import Section from '../components/ui/Section';
-import PageContent, { HTMLPageContent } from '../components/PageContent';
-import { CardList } from '../components/ui/CardList';
+import React from "react";
+import PropTypes from "prop-types";
+import { graphql } from "gatsby";
+import Layout from "../components/Layout";
+import Section from "../components/ui/Section";
+import PageContent, { HTMLPageContent } from "../components/PageContent";
+import { CardList } from "../components/ui/CardList";
 
 export const HomePageTemplate = ({
   content,
@@ -38,40 +37,31 @@ export const HomePageTemplate = ({
       ) : (
         ''
       )}
-      <Section>
-        <h2>LATEST POST</h2>
-        <Card
-          to="#"
-          actionText="Read More"
-          summary="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation"
-          title="Great post"
-        />
-      </Section>
     </main>
   );
 };
 
+const FeaturedProjects = PropTypes.shape({
+  id: PropTypes.string,
+  fields: PropTypes.shape({
+    slug: PropTypes.string,
+  }),
+  frontmatter: PropTypes.shape({
+    summary: PropTypes.string,
+    title: PropTypes.string,
+    tags: PropTypes.arrayOf(PropTypes.string),
+  }),
+});
+
 HomePageTemplate.propTypes = {
   content: PropTypes.string.isRequired,
   contentComponent: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
-  featuredProjects: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      fields: PropTypes.shape({
-        slug: PropTypes.string.isRequired,
-      }).isRequired,
-      frontmatter: PropTypes.shape({
-        summary: PropTypes.string.isRequired,
-        title: PropTypes.string.isRequired,
-        tags: PropTypes.arrayOf(PropTypes.string),
-      }).isRequired,
-    }),
-  ),
+  featuredProjects: PropTypes.arrayOf(FeaturedProjects),
 };
 
 HomePageTemplate.defaultProps = {
   contentComponent: PageContent,
-  featuredProjects: null,
+  featuredProjects: [],
 };
 
 const HomePage = ({ data }) => {

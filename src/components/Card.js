@@ -62,16 +62,16 @@ const Card = ({ title, summary, tags, to, actionText }) => {
       <CardSummary>{summary}</CardSummary>
       <CardFooter>
         <div>
-          {tags.length > 0 ? (
-            <React.Fragment>
-              <CardTagLabel>Tags</CardTagLabel>
-              {tags.map(tag => (
-                <CardTag href={`/tags/${tag.toLowerCase()}`} key={tag}>{tag}</CardTag>
-              ))}
-            </React.Fragment>
-          ) : (
-            undefined
-          )}
+          {/*{tags.length > 0 ? (*/}
+            {/*<React.Fragment>*/}
+              {/*<CardTagLabel>Tags</CardTagLabel>*/}
+              {/*{tags.map(tag => (*/}
+                {/*<CardTag href={`/tags/${tag.toLowerCase()}`} key={tag}>{tag}</CardTag>*/}
+              {/*))}*/}
+            {/*</React.Fragment>*/}
+          {/*) : (*/}
+            {/*undefined*/}
+          {/*)}*/}
         </div>
 
         <CardAction to={to}>{actionText}</CardAction>

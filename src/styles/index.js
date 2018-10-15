@@ -24,4 +24,13 @@ injectGlobal`
     line-height: 1.5;
     font-size: 1.1rem;
   }
+  
+  blockquote {
+    border-left: 2px solid ${theme.accent};
+    box-sizing: border-box;
+    
+    p {
+      margin-left: 1rem;
+    }
+  }
 `;

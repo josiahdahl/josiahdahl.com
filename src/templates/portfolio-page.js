@@ -5,6 +5,7 @@ import Section from '../components/ui/Section';
 import PageContent, { HTMLPageContent } from '../components/PageContent';
 import Card from '../components/Card';
 import Layout from '../components/Layout';
+import { CardList } from '../components/ui/CardList';
 
 export const PortfolioPageTemplate = ({
   content,
@@ -20,16 +21,15 @@ export const PortfolioPageTemplate = ({
         <Content content={content} />
       </Section>
       <Section>
-        {portfolioItems.map((item, i) => (
-          <Card
-            key={i}
-            to={item.fields.slug}
-            actionText="View Project"
-            summary={item.frontmatter.summary}
-            tags={item.frontmatter.tags}
-            title={item.frontmatter.title}
-          />
-        ))}
+        <CardList
+          cards={portfolioItems.map(project => ({
+            to: project.fields.slug,
+            actionText: 'View Project',
+            summary: project.frontmatter.summary,
+            title: project.frontmatter.title,
+            tags: project.frontmatter.tags,
+          }))}
+        />
       </Section>
     </main>
   );

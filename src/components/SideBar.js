@@ -97,12 +97,12 @@ const siteLinks = [
   {
     to: '/blog',
     text: 'Blog',
-    exists: false,
+    exists: true,
   },
   {
     to: '/about',
     text: 'About',
-    exists: false,
+    exists: true,
   },
   {
     to: '/contact',
