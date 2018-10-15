@@ -19,7 +19,7 @@ const SideBarContainer = styled.div`
 `;
 
 const ProfilePicture = styled.img`
-  border-radius: 9999px;
+  border-radius: 5px;
   display: block;
   width: 150px;
   height: auto;
@@ -52,6 +52,7 @@ const SiteNavList = styled.ul`
       color: ${props => props.theme.light};
       text-decoration: none;
       font-size: 1.5rem;
+      font-weight: normal;
 
       &:hover {
         text-decoration: underline;

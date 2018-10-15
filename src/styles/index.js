@@ -20,6 +20,10 @@ injectGlobal`
     color: ${theme.text};
   }
   
+  h1,h2,h3,h4,h5,h6 {
+    color: ${theme.light};
+  }
+  
   p {
     line-height: 1.5;
     font-size: 1.1rem;
@@ -32,5 +36,11 @@ injectGlobal`
     p {
       margin-left: 1rem;
     }
+  }
+  
+  a {
+    color: ${theme.accent};
+    font-weight: bold;
+    text-decoration: none;
   }
 `;

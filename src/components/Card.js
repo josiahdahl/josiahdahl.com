@@ -5,6 +5,7 @@ import { Link } from "gatsby";
 
 const CardContainer = styled.article`
   border: 1px solid ${props => props.theme.light};
+  border-radius: 5px;
   padding: 2rem;
   display: flex;
   flex-direction: column;

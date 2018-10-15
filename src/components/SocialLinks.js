@@ -23,7 +23,7 @@ const LinksList = styled.ul`
 
     a {
       padding: 0.25rem;
-      color: ${props => props.theme.light};
+      color: ${props => props.theme.accent};
     }
   }
 `;
