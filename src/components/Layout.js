@@ -3,20 +3,24 @@ import { Helmet } from 'react-helmet';
 import { ThemeProvider } from 'styled-components';
 import { defaultTheme as theme } from '../styles/themes';
 import '../styles';
-import SideBar from './SideBar';
+import NavBar from './NavBar';
 import Content from './Content';
 import styled from 'styled-components';
+import { breakpoints, minWidth, sizes } from "../styles/breakpoints";
 
 const LayoutGrid = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   min-height: 100vh;
   align-items: stretch;
+  @media(min-width: ${sizes.md.min}) {
+    flex-direction: row;
+  }
 `;
 
-const LayoutNavBar = styled(SideBar)`
-  max-width: 15rem;
+const LayoutNavBar = styled(NavBar)`
   width: 100%;
+  ${minWidth[breakpoints.md]`max-width: 15rem;`};
 `;
 
 const Layout = ({ children }) => {

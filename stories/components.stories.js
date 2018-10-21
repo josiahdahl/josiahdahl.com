@@ -1,7 +1,7 @@
 import React from "react";
 
 import { storiesOf } from "@storybook/react";
-import SideBar from "../src/components/SideBar";
+import NavBar from "../src/components/NavBar";
 
-storiesOf('Components/SideBar', module)
-  .add('On the side', () => <SideBar/>);
+storiesOf('Components/NavBar', module)
+  .add('On the side', () => <NavBar/>);
