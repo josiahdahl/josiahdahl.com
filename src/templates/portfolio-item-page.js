@@ -29,63 +29,34 @@ const PortfolioList = styled.ul`
   }
 `;
 
-const PortfolioTag = ({ className, tag }) => (
-  <li className={className}>
-    <PortfolioLink href={`/tags/${tag.toLowerCase()}`}>{tag}</PortfolioLink>
-  </li>
-);
-
-const PortfolioMetaContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-
-  > * {
-    width: 50%;
-  }
-`;
-
 const PortfolioItemPageTemplate = ({
   frontmatter,
   content,
   contentComponent,
 }) => {
   const Content = contentComponent || PageContent;
-  const { title, tags, demo, repository } = frontmatter;
+  const { title, demo, repository } = frontmatter;
   return (
     <main>
       <Section>
         <PortfolioTitle>{title}</PortfolioTitle>
+          <Section>
+            <PortfolioList>
+              <li>
+                <PortfolioLink href={repository} rel="noopener noopener">
+                  GitHub
+                </PortfolioLink>
+              </li>
+              <li>
+                <PortfolioLink href={demo} rel="noopener noopener">
+                  Demo
+                </PortfolioLink>
+              </li>
+            </PortfolioList>
+          </Section>
         <Content content={content} />
       </Section>
-      <PortfolioMetaContainer>
-        <Section>
-          <h2>Tags</h2>
-          {tags.length > 0 ? (
-            <PortfolioList>
-              {tags.map((tag, i) => (
-                <PortfolioTag tag={tag} key={i} />
-              ))}
-            </PortfolioList>
-          ) : (
-            undefined
-          )}
-        </Section>
-        <Section>
-          <h2>Links</h2>
-          <PortfolioList>
-            <li>
-              <PortfolioLink href={repository} rel="noopener noopener">
-                GitHub
-              </PortfolioLink>
-            </li>
-            <li>
-              <PortfolioLink href={demo} rel="noopener noopener">
-                Demo
-              </PortfolioLink>
-            </li>
-          </PortfolioList>
-        </Section>
-      </PortfolioMetaContainer>
+
     </main>
   );
 };
@@ -93,7 +64,6 @@ const PortfolioItemPageTemplate = ({
 PortfolioItemPageTemplate.propTypes = {
   frontmatter: PropTypes.shape({
     title: PropTypes.string.isRequired,
-    tags: PropTypes.arrayOf(PropTypes.string).isRequired,
     repository: PropTypes.string.isRequired,
     demo: PropTypes.string.isRequired,
   }),

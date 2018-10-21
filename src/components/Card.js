@@ -2,13 +2,17 @@ import PropTypes from "prop-types";
 import React from "react";
 import styled from "styled-components";
 import { Link } from "gatsby";
+import { sizes } from "../styles/breakpoints";
 
 const CardContainer = styled.article`
   border: 1px solid ${props => props.theme.light};
   border-radius: 5px;
-  padding: 2rem;
+  padding: 1rem 2rem;
   display: flex;
   flex-direction: column;
+  @media (min-width: ${sizes.md.min}) {
+    padding: 2rem;
+  }
 `;
 
 const CardTitle = styled.h2`
@@ -31,21 +35,6 @@ const CardFooter = styled.footer`
   margin-top: auto;
 `;
 
-const CardTagLabel = styled.div`
-  font-weight: bold;
-  font-size: 1.3rem;
-  margin-bottom: 0.4rem;
-`;
-
-const CardTag = styled.a`
-  color: ${props => props.theme.light};
-  text-decoration: none;
-  margin-right: 0.5rem;
-  &:hover {
-  text-decoration: underline;
-  }
-`;
-
 const CardAction = styled(Link)`
   color: ${props => props.theme.accent};
   font-size: 1.2rem;
@@ -62,19 +51,6 @@ const Card = ({ title, summary, tags, to, actionText }) => {
       <CardTitle>{title}</CardTitle>
       <CardSummary>{summary}</CardSummary>
       <CardFooter>
-        <div>
-          {/*{tags.length > 0 ? (*/}
-            {/*<React.Fragment>*/}
-              {/*<CardTagLabel>Tags</CardTagLabel>*/}
-              {/*{tags.map(tag => (*/}
-                {/*<CardTag href={`/tags/${tag.toLowerCase()}`} key={tag}>{tag}</CardTag>*/}
-              {/*))}*/}
-            {/*</React.Fragment>*/}
-          {/*) : (*/}
-            {/*undefined*/}
-          {/*)}*/}
-        </div>
-
         <CardAction to={to}>{actionText}</CardAction>
       </CardFooter>
     </CardContainer>

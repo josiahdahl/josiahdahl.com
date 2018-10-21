@@ -49,7 +49,6 @@ const FeaturedProjects = PropTypes.shape({
   frontmatter: PropTypes.shape({
     summary: PropTypes.string,
     title: PropTypes.string,
-    tags: PropTypes.arrayOf(PropTypes.string),
   }),
 });
 
@@ -95,7 +94,6 @@ export const homePageQuery = graphql`
           frontmatter {
             summary
             title
-            tags
           }
         }
       }

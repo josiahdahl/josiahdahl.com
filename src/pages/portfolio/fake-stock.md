@@ -6,10 +6,6 @@ title: Fake Stock
 summary: >-
   Track stocks on the Investopedia platform easily with live updates from the
   IEX API.
-tags:
-  - 'React'
-  - 'Redux'
-  - 'Netlify'
 repository: https://github.com/josiahdahl/fake-stock
 demo: https://fake-stock.netlify.com
 screenshots:

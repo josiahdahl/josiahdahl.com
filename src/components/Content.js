@@ -1,11 +1,15 @@
-import PropTypes from 'prop-types';
-import React from 'react';
-import styled from 'styled-components';
-import { pxToRem } from '../styles/util';
+import React from "react";
+import styled from "styled-components";
+import { sizes } from "../styles/breakpoints";
 
 const Content = styled.div`
-  padding: ${pxToRem(65)} ${pxToRem(100)};
-  max-width: 700px;
+  padding: 1rem 1.5rem;
+  max-width: 45rem;
+  margin: 0 auto;
+  @media (min-width: ${sizes.md.min}) {
+    margin: 0;
+    padding: 2rem 4rem;
+  }
 `;
 
 export default Content;

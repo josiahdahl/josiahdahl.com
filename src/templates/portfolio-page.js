@@ -1,11 +1,9 @@
-import PropTypes from 'prop-types';
-import React from 'react';
-import { graphql } from 'gatsby';
-import Section from '../components/ui/Section';
-import PageContent, { HTMLPageContent } from '../components/PageContent';
-import Card from '../components/Card';
-import Layout from '../components/Layout';
-import { CardList } from '../components/ui/CardList';
+import React from "react";
+import { graphql } from "gatsby";
+import Section from "../components/ui/Section";
+import PageContent, { HTMLPageContent } from "../components/PageContent";
+import Layout from "../components/Layout";
+import { CardList } from "../components/ui/CardList";
 
 export const PortfolioPageTemplate = ({
   content,
@@ -27,7 +25,6 @@ export const PortfolioPageTemplate = ({
             actionText: 'View Project',
             summary: project.frontmatter.summary,
             title: project.frontmatter.title,
-            tags: project.frontmatter.tags,
           }))}
         />
       </Section>
@@ -75,7 +72,6 @@ export const portfolioPageQuery = graphql`
           frontmatter {
             summary
             title
-            tags
           }
         }
       }

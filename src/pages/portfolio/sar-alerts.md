@@ -5,11 +5,6 @@ slug: /portfolio/sar-alerts/
 title: SAR Alerts
 summary: >-
   Dashboard for Search & Rescue operations, monitoring current weather, tides, and weather warnings.
-tags:
-  - 'Vue'
-  - 'Laravel'
-  - 'Flask'
-  - 'Web Scraping'
 repository: https://github.com/josiahdahl/sar-alerts
 demo: https://sar-alerts.josiahdahl.com
 screenshots:
