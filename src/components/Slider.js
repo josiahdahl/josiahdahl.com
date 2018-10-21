@@ -1,12 +1,7 @@
-import styled from 'styled-components';
-import React from 'react';
-import PropTypes from 'prop-types';
-import {
-  breakpoint,
-  breakpoints,
-  maxWidth,
-  sizes,
-} from '../styles/breakpoints';
+import styled from "styled-components";
+import React from "react";
+import PropTypes from "prop-types";
+import { sizes } from "../styles/breakpoints";
 
 export const SliderBackdrop = styled.div`
   position: relative;

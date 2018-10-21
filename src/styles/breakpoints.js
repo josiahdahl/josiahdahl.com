@@ -31,17 +31,7 @@ export const sizes = {
   },
 };
 
-export const breakpoint = (size, styles, type = 'min-width') => {
-  const pxVal = type === 'min-width' ? sizes[size].min : sizes[size].max;
-  return css`
-    @media(${type}: ${pxVal}) {
-      ${styles}
-    }
-`
-};
-
 export const minWidth = Object.keys(breakpoints).reduce((acc, label) => {
-  console.log(sizes[label]);
   acc[label] = (...args) => css`
     @media (min-width: ${sizes[label]}px) {
       ${css(...args)};
