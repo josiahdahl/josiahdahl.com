@@ -1,7 +1,7 @@
-import styled from "styled-components";
-import React from "react";
-import PropTypes from "prop-types";
-import { sizes } from "../styles/breakpoints";
+import styled from 'styled-components';
+import React from 'react';
+import PropTypes from 'prop-types';
+import { sizes } from '../styles/breakpoints';
 
 export const SliderBackdrop = styled.div`
   position: relative;
@@ -25,13 +25,14 @@ export const SliderContent = styled.div`
   @media (max-width: ${sizes.md.max}) {
     transition: 0.3s transform;
     transform: ${props =>
-      props.isHidden ? 'translate3d(-100%, 0, 0)' : 'translate3d(0, 0, 0)'};
+      props.isHidden ? 'translate3d(100%, 0, 0)' : 'translate3d(0, 0, 0)'};
     pointer-events: ${props => (props.isHidden ? 'none' : 'all')};
     background-color: ${props => props.theme.primary};
     color: ${props => props.theme.text};
     position: absolute;
     top: 0;
     bottom: 0;
+    right: 0;
     padding: 0 1rem;
   }
 `;

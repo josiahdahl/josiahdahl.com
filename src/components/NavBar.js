@@ -1,13 +1,18 @@
-import React, { Component } from "react";
-import styled from "styled-components";
-import { faCodepen, faGithub, faLinkedinIn, faTwitter } from "@fortawesome/free-brands-svg-icons";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import profilePicture from "../img/navbar-profile.png";
-import SocialLinks from "./SocialLinks";
-import { Link } from "gatsby";
-import { breakpoints, sizes } from "../styles/breakpoints";
-import { Slider } from "./Slider";
+import React, { Component } from 'react';
+import styled from 'styled-components';
+import {
+  faCodepen,
+  faGithub,
+  faLinkedinIn,
+  faTwitter,
+} from '@fortawesome/free-brands-svg-icons';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import profilePicture from '../img/navbar-profile.png';
+import SocialLinks from './SocialLinks';
+import { Link } from 'gatsby';
+import { breakpoints, sizes } from '../styles/breakpoints';
+import { Slider } from './Slider';
 
 const NavBarContainer = styled.div`
   display: flex;
@@ -22,7 +27,7 @@ const NavBarContainer = styled.div`
     width: auto;
     min-width: 10rem;
     flex: 0;
-    padding: 4rem 2rem 0; 
+    padding: 4rem 2rem 0;
   }
   @media (min-width: ${sizes.lg.min}) {
     padding-left: 4rem;
@@ -50,6 +55,12 @@ const NavBarHeader = styled.div`
   }
 `;
 
+const NavBarTitle = styled.a`
+  font-size: 1.4rem;
+  text-decoration: none;
+  color: ${props => props.theme.text};
+`;
+
 const SliderToggle = styled.button`
   background: transparent;
   border: none;
@@ -74,13 +85,16 @@ const ProfilePicture = styled.img`
 const ProfileName = styled.h1`
   text-align: center;
   visibility: hidden;
+  font-size: 1.8rem;
   @media (min-width: ${sizes.md.min}) {
     visibility: visible;
   }
-`;
 
-const ProfileNameInner = styled.span`
-  font-size: 0.8em;
+  ${NavBarHeader} & {
+    visibility: visible;
+    margin: 0;
+    line-height: 1;
+  }
 `;
 
 const SiteNav = styled.div`
@@ -165,6 +179,7 @@ class NavBar extends Component {
   state = {
     sliderClosed: true,
   };
+
   constructor(props) {
     super(props);
     this.toggleSlider = this.toggleSlider.bind(this);
@@ -189,17 +204,18 @@ class NavBar extends Component {
     return (
       <NavBarContainer className={className}>
         <NavBarHeader>
-          <b>&lt;JosiahDahl /&gt;</b>
-          {/*<ProfilePictureHeader src={profilePicture} alt="Josiah Dahl" />*/}
+          <NavBarTitle>Josiah Dahl</NavBarTitle>
           <SliderToggle onClick={this.toggleSlider}>
             <FontAwesomeIcon icon={faBars} />
           </SliderToggle>
         </NavBarHeader>
-        <Slider isHidden={sliderClosed} disabledAtPx={breakpoints.md.max} onBackdropClick={this.closeSlider}>
+        <Slider
+          isHidden={sliderClosed}
+          disabledAtPx={breakpoints.md.max}
+          onBackdropClick={this.closeSlider}
+        >
           <ProfilePicture src={profilePicture} alt="Josiah Dahl" />
-          <ProfileName>
-            <ProfileNameInner>Josiah Dahl</ProfileNameInner>
-          </ProfileName>
+          <ProfileName>Josiah Dahl</ProfileName>
           <SocialLinks links={socialLinks} />
           <SiteNav>
             <SiteNavList>
