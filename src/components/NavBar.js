@@ -1,18 +1,13 @@
-import React, { Component } from 'react';
-import styled from 'styled-components';
-import {
-  faCodepen,
-  faGithub,
-  faLinkedinIn,
-  faTwitter,
-} from '@fortawesome/free-brands-svg-icons';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import profilePicture from '../img/navbar-profile.png';
-import SocialLinks from './SocialLinks';
-import { Link } from 'gatsby';
-import { breakpoints, sizes } from '../styles/breakpoints';
-import { Slider } from './Slider';
+import React, { Component } from "react";
+import styled from "styled-components";
+import { faCodepen, faGithub, faLinkedinIn, faTwitter } from "@fortawesome/free-brands-svg-icons";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import profilePicture from "../img/navbar-profile.png";
+import SocialLinks from "./SocialLinks";
+import { Link } from "gatsby";
+import { sizes } from "../styles/breakpoints";
+import { Slider } from "./Slider";
 
 const NavBarContainer = styled.div`
   display: flex;
@@ -211,7 +206,7 @@ class NavBar extends Component {
         </NavBarHeader>
         <Slider
           isHidden={sliderClosed}
-          disabledAtPx={breakpoints.md.max}
+          disabledAtPx={sizes.md.max}
           onBackdropClick={this.closeSlider}
         >
           <ProfilePicture src={profilePicture} alt="Josiah Dahl" />

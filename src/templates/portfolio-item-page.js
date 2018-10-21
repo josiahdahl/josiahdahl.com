@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { graphql, Link } from "gatsby";
+import { graphql } from "gatsby";
 import styled from 'styled-components';
 import Layout from '../components/Layout';
 import Section from '../components/ui/Section';
@@ -8,15 +8,6 @@ import PageContent, { HTMLPageContent } from '../components/PageContent';
 
 const PortfolioTitle = styled.h1`
   margin-top: 0.5rem;
-`;
-
-const PortfolioLink = styled(Link)`
-  color: ${props => props.theme.light};
-  text-decoration: none;
-
-  &:hover {
-    text-decoration: underline;
-  }
 `;
 
 const PortfolioList = styled.ul`
@@ -43,14 +34,14 @@ const PortfolioItemPageTemplate = ({
           <Section>
             <PortfolioList>
               <li>
-                <PortfolioLink href={repository} rel="noopener noopener">
+                <a href={repository} target="_blank" rel="noopener noreferrer">
                   GitHub
-                </PortfolioLink>
+                </a>
               </li>
               <li>
-                <PortfolioLink href={demo} rel="noopener noopener">
+                <a href={demo} target="_blank" rel="noopener noreferrer">
                   Demo
-                </PortfolioLink>
+                </a>
               </li>
             </PortfolioList>
           </Section>
@@ -102,7 +93,6 @@ export const portfolioItemQuery = graphql`
       html
       frontmatter {
         title
-        tags
         repository
         demo
       }

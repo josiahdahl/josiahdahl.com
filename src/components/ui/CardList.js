@@ -28,5 +28,5 @@ export const CardList = ({ cards }) => {
 };
 
 CardList.propTypes = {
-  cards: PropTypes.arrayOf(CardPropTypes).isRequired,
+  cards: PropTypes.arrayOf(PropTypes.shape(CardPropTypes)).isRequired,
 };
