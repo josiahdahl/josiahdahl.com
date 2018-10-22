@@ -105,6 +105,7 @@ const SiteNavList = styled.ul`
   li {
     margin-bottom: 1rem;
     font-size: 1.4rem;
+    position: relative;
 
     a {
       color: ${props => props.theme.light};
@@ -119,9 +120,22 @@ const SiteNavList = styled.ul`
   }
 `;
 
-const SiteNavLink = ({ to, text, exists }) => (
-  <li>{exists ? <Link to={to}>{text}</Link> : <a href={to}>{text}</a>}</li>
-);
+
+const SiteNavLink = styled(Link).attrs({
+  activeClassName: 'is-active',
+})`
+  display: block;
+ 
+  &.is-active {
+    :before {
+      position: absolute;
+      left: -1rem;
+      content: '';
+      border: 1px solid ${props => props.theme.accent};
+      height: 100%;
+    }
+  }
+`;
 
 const socialLinks = [
   {
@@ -146,27 +160,22 @@ const siteLinks = [
   {
     to: '/',
     text: 'Home',
-    exists: true,
   },
   {
     to: '/portfolio',
     text: 'Portfolio',
-    exists: true,
   },
   {
     to: '/blog',
     text: 'Blog',
-    exists: true,
   },
   {
     to: '/about',
     text: 'About',
-    exists: true,
   },
   {
     to: '/contact',
     text: 'Contact',
-    exists: false,
   },
 ];
 
@@ -215,7 +224,9 @@ class NavBar extends Component {
           <SiteNav>
             <SiteNavList>
               {siteLinks.map((link, i) => (
-                <SiteNavLink key={i} {...link} />
+                <li key={i}>
+                  <SiteNavLink to={link.to}>{link.text}</SiteNavLink>
+                </li>
               ))}
             </SiteNavList>
           </SiteNav>
