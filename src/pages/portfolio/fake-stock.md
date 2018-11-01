@@ -26,7 +26,7 @@ Fake Stock is built with:
 - Semantic UI React
 - IEX Developer Platform (stocks)
 - A bleeding edge, disruptive algorithm for parsing data (aka regexes, maps, filters, and reduces)
-- GitHub pages with CI/CD through Circle CI
+- Netlify
 
 ## Roadmap
 
