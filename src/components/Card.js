@@ -5,7 +5,7 @@ import { Link } from "gatsby";
 import { sizes } from "../styles/breakpoints";
 
 const CardContainer = styled.article`
-  border: 1px solid ${props => props.theme.light};
+  border: 1px solid ${props => props.theme.cardBorder};
   border-radius: 5px;
   padding: 1rem 2rem;
   display: flex;

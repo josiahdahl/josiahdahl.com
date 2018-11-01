@@ -1,6 +1,6 @@
 import styledNormalize from 'styled-normalize';
 import { injectGlobal } from 'styled-components';
-import { defaultTheme as theme } from './themes';
+import { lightTheme as theme } from './themes';
 
 injectGlobal`
   ${styledNormalize}
@@ -16,12 +16,12 @@ injectGlobal`
     min-height: 100%;
   }
   body {
-    background-color: ${theme.dark};
+    background-color: ${theme.background};
     color: ${theme.text};
   }
   
   h1,h2,h3,h4,h5,h6 {
-    color: ${theme.light};
+    color: ${theme.headers};
   }
   
   p {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { ThemeProvider } from 'styled-components';
-import { defaultTheme as theme } from '../styles/themes';
+import { defaultTheme as theme, lightTheme } from '../styles/themes';
 import '../styles';
 import NavBar from './NavBar';
 import Content from './Content';
@@ -25,7 +25,7 @@ const LayoutNavBar = styled(NavBar)`
 
 const Layout = ({ children }) => {
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={lightTheme}>
       <LayoutGrid>
         <Helmet title="Josiah Dahl - Full stack web developer" />
         <LayoutNavBar />

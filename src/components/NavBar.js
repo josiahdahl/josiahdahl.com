@@ -53,14 +53,14 @@ const NavBarHeader = styled.div`
 const NavBarTitle = styled.a`
   font-size: 1.4rem;
   text-decoration: none;
-  color: ${props => props.theme.text};
+  color: ${props => props.theme.light};
 `;
 
 const SliderToggle = styled.button`
   background: transparent;
   border: none;
   padding: 0.5rem;
-  color: ${props => props.theme.text};
+  color: ${props => props.theme.light};
   @media (min-width: ${sizes.md.min}) {
     display: none;
   }
@@ -81,6 +81,7 @@ const ProfileName = styled.h1`
   text-align: center;
   visibility: hidden;
   font-size: 1.8rem;
+  color: ${props => props.theme.light};
   @media (min-width: ${sizes.md.min}) {
     visibility: visible;
   }

@@ -27,7 +27,7 @@ export const Label = styled.label`
   margin-bottom: 0.5rem;
   font-size: 1.1rem;
   font-weight: bold;
-  color: ${props => props.theme.light};
+  color: ${props => props.theme.text};
 `;
 
 export const Textarea = styled.textarea`
