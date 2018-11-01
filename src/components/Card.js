@@ -45,9 +45,9 @@ const CardAction = styled(Link)`
   letter-spacing: 0.04em;
 `;
 
-const Card = ({ title, summary, tags, to, actionText }) => {
+const Card = ({ title, summary, tags, to, actionText, className }) => {
   return (
-    <CardContainer>
+    <CardContainer className={className}>
       <CardTitle>{title}</CardTitle>
       <CardSummary>{summary}</CardSummary>
       <CardFooter>
@@ -62,7 +62,8 @@ export const CardPropTypes = {
   summary: PropTypes.string.isRequired,
   tags: PropTypes.arrayOf(PropTypes.string),
   to: PropTypes.string,
-  actionText: PropTypes.string
+  actionText: PropTypes.string,
+  className: PropTypes.string,
 };
 
 Card.propTypes = CardPropTypes;
@@ -70,7 +71,8 @@ Card.propTypes = CardPropTypes;
 Card.defaultProps = {
   tags: [],
   to: undefined,
-  actionText: "View"
+  actionText: "View",
+  className: '',
 };
 
 

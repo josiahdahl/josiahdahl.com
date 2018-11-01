@@ -20,6 +20,7 @@ export const PortfolioPageTemplate = ({
       </Section>
       <Section>
         <CardList
+          isTiled={true}
           cards={portfolioItems.map(project => ({
             to: project.fields.slug,
             actionText: 'View Project',
