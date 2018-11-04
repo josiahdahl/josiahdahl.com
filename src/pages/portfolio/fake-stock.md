@@ -42,9 +42,15 @@ Since each iteration of the portfolio is saved, it should be simple to show a gr
 
 #### Automated updates to portfolio
 
-While Investopedia doesn't have an open API, there are several wrappers that would allow a headless login experience. I envisioned a daily job to go and update each user's portfolio, but managing passwords and a server is overkill for this little project.
+While Investopedia doesn't have an open API, there are several wrappers that would allow a headless login experience. I 
+envisioned a daily job to go and update each user's portfolio, but managing passwords and a server is overkill for this little project.
 
 #### In-app trading
 
-Currently Investopedia runs trades after a ~15 minute wait time. I wanted to add a tracker that would let the user know how much time was left in their trade and automatically update their portfolio once it had been completed. The user would have to manually add the trade here, but could click on a link with query params to open up the Investopedia page with pre-filled values.
-e.g. https://www.investopedia.com/simulator/trade/tradestock.aspx?too=2&Sym=TRVG&Qty=4500 would sell 4500 shares of Trivago (TRVG).
+Currently Investopedia runs trades after a ~15 minute wait time. I wanted to add a tracker that would let the user know 
+how much time was left in their trade and automatically update their portfolio once it had been completed. The user 
+would have to manually add the trade here, but could click on a link with query params to open up the Investopedia page 
+with pre-filled values.
+
+For instance, the link below would open the page to sell 4500 shares of Trivago.
+<blockquote>https://<i></i>www.investopedia.com/simulator/trade/tradestock.aspx?too=2&Sym=TRVG&Qty=4500</blockquote>

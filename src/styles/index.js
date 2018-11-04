@@ -32,10 +32,7 @@ injectGlobal`
   blockquote {
     border-left: 2px solid ${theme.accent};
     box-sizing: border-box;
-    
-    p {
-      margin-left: 1rem;
-    }
+    padding-left: 1rem;
   }
   
   a {

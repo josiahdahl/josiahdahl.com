@@ -43,12 +43,42 @@ const CardAction = styled(Link)`
   text-transform: uppercase;
   text-decoration: none;
   letter-spacing: 0.04em;
+  position: relative;
+
+  &:after {
+    position: absolute;
+    height: 2px;
+    bottom: -5px;
+    left: 5px;
+    right: 5px;
+    background-color: ${props => props.theme.accent};
+    content: '';
+    opacity: 0;
+    transform: translate3d(-5%, 0, 0);
+    transition: opacity 0.25s, transform 0.25s;
+  }
+
+  &:hover {
+    &:after {
+      position: absolute;
+      height: 2px;
+      bottom: -5px;
+      left: 5px;
+      right: 5px;
+      background-color: ${props => props.theme.accent};
+      content: '';
+      transform: translate3d(0, 0, 0);
+      opacity: 1;
+    }
+  }
 `;
 
 const Card = ({ title, summary, tags, to, actionText, className }) => {
   return (
     <CardContainer className={className}>
-      <CardTitle>{title}</CardTitle>
+      <CardTitle>
+        <Link to={to}>{title}</Link>
+      </CardTitle>
       <CardSummary>{summary}</CardSummary>
       <CardFooter>
         <CardAction to={to}>{actionText}</CardAction>
@@ -71,9 +101,8 @@ Card.propTypes = CardPropTypes;
 Card.defaultProps = {
   tags: [],
   to: undefined,
-  actionText: "View",
+  actionText: 'View',
   className: '',
 };
-
 
 export default Card;

@@ -24,7 +24,7 @@ with Flask and BeautifulSoup
  
 **Weather**
 
-Weather is pulled from [OpenWeatherMap](https://openweathermap.org). Due to API limits and the fact that 
+Weather is pulled from <a href="https://openweathermap.org" target="_blank" rel="noopener noreferrer">OpenWeatherMap</a>. Due to API limits and the fact that 
 weather doesn't change that fast, responses are cached server side for 30 minutes.
 
 **Tides**
