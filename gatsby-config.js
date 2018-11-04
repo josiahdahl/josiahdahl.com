@@ -33,6 +33,12 @@ module.exports = {
         modulePath: `${__dirname}/src/cms/cms.js`
       }
     },
+    {
+      resolve: 'gatsby-plugin-canonical-urls',
+      options: {
+        siteUrl: 'https://www.josiahdahl.com',
+      },
+    },
     'gatsby-plugin-netlify' // make sure to keep it last in the array
   ]
 };

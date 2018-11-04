@@ -1,9 +1,9 @@
-import React from "react";
-import { graphql } from "gatsby";
-import Section from "../components/ui/Section";
-import PageContent, { HTMLPageContent } from "../components/PageContent";
-import Layout from "../components/Layout";
-import { CardList } from "../components/ui/CardList";
+import React from 'react';
+import { graphql } from 'gatsby';
+import Section from '../components/ui/Section';
+import PageContent, { HTMLPageContent } from '../components/PageContent';
+import Layout from '../components/Layout';
+import { CardList } from '../components/ui/CardList';
 
 export const PortfolioPageTemplate = ({
   content,
@@ -40,7 +40,7 @@ const PortfolioPage = ({ data }) => {
   const { html: content, frontmatter } = data.markdownRemark;
   const portfolioItems = edges.map(({ node }) => node);
   return (
-    <Layout>
+    <Layout helmetProps={{ title: frontmatter.title }}>
       <PortfolioPageTemplate
         contentComponent={HTMLPageContent}
         content={content}

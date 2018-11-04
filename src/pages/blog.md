@@ -1,5 +1,6 @@
 ---
 templateKey: content-page
+title: Blog
 ---
 
 # Blog

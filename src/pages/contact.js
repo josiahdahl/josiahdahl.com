@@ -5,7 +5,7 @@ import Section from "../components/ui/Section";
 
 const ContactPage = () => {
   return (
-    <Layout>
+    <Layout helmetProps={{title: 'Contact'}}>
       <Section>
         <h1>Contact</h1>
         <p>

@@ -29,9 +29,10 @@ HomePageTemplate.defaultProps = {
 
 const ContentPage = ({ data }) => {
   const { markdownRemark: page } = data;
+  const { title } = page.frontmatter;
 
   return (
-    <Layout>
+    <Layout helmetProps={{ title }}>
       <ContentPageTemplate
         contentComponent={HTMLPageContent}
         content={page.html}
@@ -46,6 +47,9 @@ export const contentPageQuery = graphql`
   query ContentPage($id: String!) {
     markdownRemark(id: { eq: $id }) {
       html
+      frontmatter {
+        title
+      }
     }
   }
 `;

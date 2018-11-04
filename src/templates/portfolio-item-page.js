@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { graphql } from "gatsby";
+import { graphql } from 'gatsby';
 import styled from 'styled-components';
 import Layout from '../components/Layout';
 import Section from '../components/ui/Section';
@@ -31,23 +31,22 @@ const PortfolioItemPageTemplate = ({
     <main>
       <Section>
         <PortfolioTitle>{title}</PortfolioTitle>
-          <Section>
-            <PortfolioList>
-              <li>
-                <a href={repository} target="_blank" rel="noopener noreferrer">
-                  GitHub
-                </a>
-              </li>
-              <li>
-                <a href={demo} target="_blank" rel="noopener noreferrer">
-                  Demo
-                </a>
-              </li>
-            </PortfolioList>
-          </Section>
+        <Section>
+          <PortfolioList>
+            <li>
+              <a href={repository} target="_blank" rel="noopener noreferrer">
+                GitHub
+              </a>
+            </li>
+            <li>
+              <a href={demo} target="_blank" rel="noopener noreferrer">
+                Demo
+              </a>
+            </li>
+          </PortfolioList>
+        </Section>
         <Content content={content} />
       </Section>
-
     </main>
   );
 };
@@ -64,9 +63,10 @@ PortfolioItemPageTemplate.propTypes = {
 
 const PortfolioItemPage = ({ data }) => {
   const { markdownRemark: item } = data;
+  const { title } = item.frontmatter;
 
   return (
-    <Layout>
+    <Layout helmetProps={{ title: `${title}` }}>
       <PortfolioItemPageTemplate
         frontmatter={item.frontmatter}
         content={item.html}
