@@ -43,6 +43,7 @@ const Layout = ({ helmetProps, children }) => {
       <LayoutGrid>
         <Helmet {...transformHelmet(helmetProps)}>
           <html lang="en" />
+          <meta name="theme-color" content={theme.primary} />
         </Helmet>
         <LayoutNavBar />
         <Content id="page-content">{children}</Content>
