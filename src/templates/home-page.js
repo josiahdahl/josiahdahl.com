@@ -5,6 +5,7 @@ import Layout from '../components/Layout';
 import Section from '../components/ui/Section';
 import PageContent, { HTMLPageContent } from '../components/PageContent';
 import { CardList } from '../components/ui/CardList';
+import { Helmet } from 'react-helmet';
 
 export const HomePageTemplate = ({
   content,
@@ -65,9 +66,13 @@ HomePageTemplate.defaultProps = {
 
 const HomePage = ({ data }) => {
   const { markdownRemark: page, allMarkdownRemark } = data;
+  const { metaDescription } = page.frontmatter;
 
   return (
     <Layout>
+      <Helmet>
+        <meta name="description" content={metaDescription} />
+      </Helmet>
       <HomePageTemplate
         contentComponent={HTMLPageContent}
         content={page.html}
