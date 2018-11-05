@@ -47,8 +47,10 @@ export const contentPageQuery = graphql`
   query ContentPage($id: String!) {
     markdownRemark(id: { eq: $id }) {
       html
+      excerpt
       frontmatter {
         title
+        metaDescription
       }
     }
   }

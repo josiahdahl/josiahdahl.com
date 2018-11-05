@@ -1,6 +1,7 @@
 ---
 templateKey: content-page
 title: Blog
+metaDescription: Articles and thoughts ranging from web development to Olympic weightlifting. 
 ---
 
 # Blog

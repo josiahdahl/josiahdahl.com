@@ -1,10 +1,10 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { graphql } from "gatsby";
-import Layout from "../components/Layout";
-import Section from "../components/ui/Section";
-import PageContent, { HTMLPageContent } from "../components/PageContent";
-import { CardList } from "../components/ui/CardList";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { graphql } from 'gatsby';
+import Layout from '../components/Layout';
+import Section from '../components/ui/Section';
+import PageContent, { HTMLPageContent } from '../components/PageContent';
+import { CardList } from '../components/ui/CardList';
 
 export const HomePageTemplate = ({
   content,
@@ -83,6 +83,9 @@ export const homePageQuery = graphql`
   query HomePage($id: String!) {
     markdownRemark(id: { eq: $id }) {
       html
+      frontmatter {
+        metaDescription
+      }
     }
     allMarkdownRemark(filter: { frontmatter: { featured: { eq: true } } }) {
       edges {

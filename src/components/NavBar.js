@@ -142,22 +142,38 @@ const SiteNavLink = styled(Link).attrs({
   }
 `;
 
+const SkipNavigation = styled.a`
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  text-align: center;
+  &:focus {
+    height: auto;
+    overflow: visible;
+    margin-bottom: 0.5rem;
+  }
+`;
+
 const socialLinks = [
   {
     href: 'https://github.com/josiahdahl',
     icon: faGithub,
+    label: 'Github',
   },
   {
     href: 'https://www.linkedin.com/in/josiah-dahl/',
     icon: faLinkedinIn,
+    label: 'Linkedin',
   },
   {
     href: 'https://www.twitter.com/josiahdahl',
     icon: faTwitter,
+    label: 'Twitter',
   },
   {
     href: 'https://codepen.io/jodahl/',
     icon: faCodepen,
+    label: 'Codepen',
   },
 ];
 
@@ -212,10 +228,14 @@ class NavBar extends Component {
     const { sliderClosed } = this.state;
     return (
       <NavBarContainer className={className}>
+        <SkipNavigation href="#page-content">Skip Navigation</SkipNavigation>
         <NavBarHeader>
           <NavBarTitle>Josiah Dahl</NavBarTitle>
-          <SliderToggle onClick={this.toggleSlider}>
-            <FontAwesomeIcon icon={faBars} />
+          <SliderToggle
+            onClick={this.toggleSlider}
+            aria-label="Toggle Navigation"
+          >
+            <FontAwesomeIcon icon={faBars} aria-hidden="true" />
           </SliderToggle>
         </NavBarHeader>
         <Slider

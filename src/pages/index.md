@@ -1,6 +1,7 @@
 ---
 templateKey: 'home-page'
 path: /
+metaDescription: I am a full stack web developer with a background in PHP, Node, ES6+, and TypeScript.
 ---
 # Hello!
 

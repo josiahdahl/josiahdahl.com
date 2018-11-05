@@ -41,9 +41,11 @@ const Layout = ({ helmetProps, children }) => {
   return (
     <ThemeProvider theme={theme}>
       <LayoutGrid>
-        <Helmet {...transformHelmet(helmetProps)} />
+        <Helmet {...transformHelmet(helmetProps)}>
+          <html lang="en" />
+        </Helmet>
         <LayoutNavBar />
-        <Content>{children}</Content>
+        <Content id="page-content">{children}</Content>
       </LayoutGrid>
     </ThemeProvider>
   );
