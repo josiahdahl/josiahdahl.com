@@ -1,13 +1,19 @@
-import React, { Component } from "react";
-import styled from "styled-components";
-import { faCodepen, faGithub, faLinkedinIn, faTwitter } from "@fortawesome/free-brands-svg-icons";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import profilePicture from "../img/navbar-profile.png";
-import SocialLinks from "./SocialLinks";
-import { Link } from "gatsby";
-import { sizes } from "../styles/breakpoints";
-import { Slider } from "./Slider";
+import React, { Component } from 'react';
+import styled from 'styled-components';
+import {
+  faCodepen,
+  faGithub,
+  faLinkedinIn,
+  faTwitter,
+} from '@fortawesome/free-brands-svg-icons';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import profilePicture1x from '../img/navbar-profile@1x.jpg';
+import profilePicture2x from '../img/navbar-profile@2x.jpg';
+import SocialLinks from './SocialLinks';
+import { Link } from 'gatsby';
+import { sizes } from '../styles/breakpoints';
+import { Slider } from './Slider';
 
 const NavBarContainer = styled.div`
   display: flex;
@@ -120,12 +126,11 @@ const SiteNavList = styled.ul`
   }
 `;
 
-
 const SiteNavLink = styled(Link).attrs({
   activeClassName: 'is-active',
 })`
   display: block;
- 
+
   &.is-active {
     :before {
       position: absolute;
@@ -218,7 +223,11 @@ class NavBar extends Component {
           disabledAtPx={sizes.md.max}
           onBackdropClick={this.closeSlider}
         >
-          <ProfilePicture src={profilePicture} alt="Josiah Dahl" />
+          <ProfilePicture
+            src={profilePicture1x}
+            srcset={`${profilePicture1x} 1x, ${profilePicture2x} 2x`}
+            alt="Josiah Dahl"
+          />
           <ProfileName>Josiah Dahl</ProfileName>
           <SocialLinks links={socialLinks} />
           <SiteNav>
