@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import Layout from '../components/Layout';
 import Section from '../components/ui/Section';
 import PageContent, { HTMLPageContent } from '../components/PageContent';
+import { Helmet } from "react-helmet";
 
 const PortfolioTitle = styled.h1`
   margin-top: 0.5rem;
@@ -56,6 +57,7 @@ PortfolioItemPageTemplate.propTypes = {
     title: PropTypes.string.isRequired,
     repository: PropTypes.string.isRequired,
     demo: PropTypes.string.isRequired,
+    summary: PropTypes.string.isRequired,
   }),
   content: PropTypes.string,
   contentComponent: PropTypes.func,
@@ -63,10 +65,13 @@ PortfolioItemPageTemplate.propTypes = {
 
 const PortfolioItemPage = ({ data }) => {
   const { markdownRemark: item } = data;
-  const { title } = item.frontmatter;
+  const { title, summary } = item.frontmatter;
 
   return (
     <Layout helmetProps={{ title: `${title}` }}>
+      <Helmet>
+        <meta name="description" content={summary}/>
+      </Helmet>
       <PortfolioItemPageTemplate
         frontmatter={item.frontmatter}
         content={item.html}
@@ -95,6 +100,7 @@ export const portfolioItemQuery = graphql`
         title
         repository
         demo
+        summary
       }
     }
   }

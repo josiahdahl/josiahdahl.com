@@ -16,6 +16,7 @@ export const SliderBackdrop = styled.div`
       props.isHidden ? 'transparent' : 'rgba(0, 0, 0, 0.7)'};
     transition: 0.3s background-color;
     pointer-events: ${props => (props.isHidden ? 'none' : 'all')};
+    visibility: ${props => (props.isHidden ? 'hidden' : 'visible')};
   }
 `;
 
@@ -34,6 +35,7 @@ export const SliderContent = styled.div`
     bottom: 0;
     right: 0;
     padding: 0 1rem;
+    visibility: ${props => (props.isHidden ? 'hidden' : 'visible')};
   }
 `;
 

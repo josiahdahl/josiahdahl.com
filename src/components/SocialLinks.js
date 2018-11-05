@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
 
-const Link = ({ href, icon }) => (
+const Link = ({ href, icon, label }) => (
   <li>
-    <a href={href} target="_blank" rel="noopener noreferrer">
-      <FontAwesomeIcon icon={icon} />
+    <a href={href} aria-label={label} target="_blank" rel="noopener noreferrer">
+      <FontAwesomeIcon icon={icon} aria-hidden={true} />
     </a>
   </li>
 );
@@ -41,6 +41,7 @@ SocialLinks.propTypes = {
     PropTypes.shape({
       href: PropTypes.string.isRequired,
       icon: PropTypes.object.isRequired,
+      label: PropTypes.string.isRequired,
     }),
   ).isRequired,
 };

@@ -4,6 +4,7 @@ import Section from '../components/ui/Section';
 import PageContent, { HTMLPageContent } from '../components/PageContent';
 import Layout from '../components/Layout';
 import { CardList } from '../components/ui/CardList';
+import { Helmet } from "react-helmet";
 
 export const PortfolioPageTemplate = ({
   content,
@@ -41,6 +42,9 @@ const PortfolioPage = ({ data }) => {
   const portfolioItems = edges.map(({ node }) => node);
   return (
     <Layout helmetProps={{ title: frontmatter.title }}>
+      <Helmet>
+        <meta name="description" content={frontmatter.metaDescription}/>
+      </Helmet>
       <PortfolioPageTemplate
         contentComponent={HTMLPageContent}
         content={content}
@@ -59,6 +63,7 @@ export const portfolioPageQuery = graphql`
       html
       frontmatter {
         title
+        metaDescription
       }
     }
     allMarkdownRemark(
