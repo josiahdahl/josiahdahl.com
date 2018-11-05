@@ -9,6 +9,10 @@ const Content = styled.div`
     margin: 0;
     padding: 2rem 4rem;
   }
+  
+  img {
+    max-width: 100%;
+  }
 `;
 
 export default Content;
