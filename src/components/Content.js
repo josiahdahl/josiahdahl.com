@@ -14,6 +14,7 @@ const Content = styled.div`
     margin: 0 auto;
     /* Navbar width calculated to rem */
     padding-right: ${224 / 16}rem;
+    padding-left: 0;
   }
 
   @media (min-width: ${sizes.xl.min}) {
