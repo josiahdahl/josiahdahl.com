@@ -34,6 +34,11 @@ const NavBarContainer = styled.div`
     padding-left: 4rem;
     padding-right: 4rem;
   }
+  
+  @media (min-width: ${sizes.xl.min}) {
+    padding-left: 6rem;
+    padding-right: 6rem;
+  }
 `;
 
 const NavBarHeader = styled.div`
